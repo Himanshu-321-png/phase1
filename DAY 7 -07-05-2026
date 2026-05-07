@@ -1,0 +1,159 @@
+|----------------------------------------|
+|  // problem 1 ;                        |
+|   /// Access Specifier                 |
+|  // 7.2 Private                        |
+|----------------------------------------|
+
+#include <iostream>
+using namespace std;
+ class BandAccount {
+     private: 
+     int balance = 5000;
+     public:
+     void showBalance (){
+         cout<< "balance in your account is: "<<balance;
+     }
+ };
+
+int main() {
+BandAccount myaccount;
+myaccount.showBalance();
+    // return 0;
+}
+
+
+|---------------------------------|
+|  // problem 2 ;                |
+|  /// Access Specifier           |
+|  // 7.3 Protected               |
+|---------------------------------|
+
+#include <iostream>
+using namespace std;
+ class Parent{
+     protected:
+     int secretcode = 1234;
+};
+class child: public Parent{
+    public:
+    void accessOfSecretCode(){
+        cout<<" secretCode of the locker is "<< secretcode;
+    }
+};
+int main(){
+    child obj1;
+    obj1.accessOfSecretCode();
+}
+
+
+|-----------------------------------|
+| // problem 3 ;                    |
+| // Constructors                   |
+| // Types -- 2.1 -- default        |
+| //          2.2 -- Parameterized  |
+| //          2.3 -- Copy           |
+|-----------------------------------|
+
+#include <iostream>
+using namespace std;
+class Wificonnection{
+    public:
+    string networkName;
+    string password;
+ // Constructor 
+   Wificonnection(){
+     networkName = "ACTfiber";
+     password = "abcd";
+   }
+     public:
+     void showdetails(){
+     cout<<"natwork name is  " << networkName<<endl;
+     cout<<"its password is " << password;
+  }
+};
+int main(){
+    Wificonnection obj1;
+    obj1.showdetails();
+}
+
+
+|------------------------------------|
+| 2.2 -- Parameterized Constructor   |
+|------------------------------------|
+class Student {
+
+public:
+    string name;
+    int id;
+    
+// Constructor
+
+    Student(string studentName, int studentID){
+        name = studentName;
+        id = studentID;
+    }
+
+public:
+void displayDetails() {
+    cout << name << " " <<id;
+}    
+};
+int main() {
+    Student std1("Abhishek", 101);
+    std1.displayDetails();
+    
+}
+
+|-----------------------------|
+|  // problem 4;              |
+|  // getter and setter       |
+|-----------------------------|
+
+#include <iostream>
+using namespace std;
+class bankAccount{
+    private:
+    int balance;
+    
+    public:
+    void setBalance(int amount){
+        if(amount >= 0){
+            balance = amount;
+        }else{
+            cout<<"enter a valid number...";
+        }
+    }     
+        public:
+        int getbalance(){
+        return balance;
+    }
+};
+
+int main(){
+bankAccount obj1;
+obj1.setBalance(5000);
+cout<<obj1.getbalance();
+}
+
+ |----------------------------------------------------------------------------------------------------------|
+ | // Problem -- 5                                                                                          |
+ |  // Abstraction                                                                                          |
+ |  // Abstraction means hiding the implementation and showing only the neccessary / essential              |
+ |   // features to the users                                                                               |
+ |   // abstract class -- class cannot be initialized and it is formed using the abstract keyword           |
+ |  // absract method -- there is no initialization of the abstract method                                  |
+ |----------------------------------------------------------------------------------------------------------|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
