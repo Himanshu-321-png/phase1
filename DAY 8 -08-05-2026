@@ -1,0 +1,250 @@
+
+|====================================|
+|    // problem 1                    |
+|  // INHERITANCE                    |
+| // SINGLE INHERITANCE              |
+|====================================|
+ 
+#include <iostream>
+using namespace std;
+class vehicle {
+    public:
+    void start(){
+        cout<<"vehicle is start"<<"\n";
+    }
+};
+class car : public vehicle {
+    public: 
+    void drive (){
+        cout<<"car is running "<<"\n";
+    }
+};
+int main() {
+    car obj1;
+obj1.start();
+obj1.drive();;
+
+    return 0;
+}
+
+|===================================|
+|   // problem 2                    |
+|  // INHERITANCE                   |
+|  // MULITTILEVEL  INHERITANCE     |
+|===================================|
+ 
+#include <iostream>
+using namespace std;
+class vehicle {
+    public:
+    void start(){
+        cout<<"vehicle is start"<<"\n";
+    }
+};
+class car : public vehicle {
+    public: 
+    void drive (){
+        cout<<"car is running "<<"\n";
+    }
+};
+class speedometer : public car{
+    public:
+    void speed(){
+        cout<<"cars speed is 100km/h"<<"\n";
+    }
+};
+int main() {
+speedometer obj1;
+obj1.start();
+obj1.drive();
+obj1.speed();
+
+    return 0;
+}
+
+|================================|
+|  // problem 3                  |
+|   // INHERITANCE               |
+|  //  MULTIPLE INHERITANCE      |
+|================================|
+ 
+#include <iostream>
+using namespace std;
+class vehicle {
+    public:
+    void start(){
+        cout<<"vehicle is start"<<"\n";
+    }
+};
+class car : public vehicle {
+    public: 
+    void drive (){
+        cout<<"car is running "<<"\n";
+    }
+};
+class bike : public vehicle {
+    public:
+    void drive(){
+        cout<<"bike is running"<<"\n";
+    }
+};
+int main() {
+car obj1;
+obj1.start();
+obj1.drive();
+bike obj2;
+obj2.drive();
+
+    return 0;
+}
+
+|======================================|
+|   // problem 4                       |
+|     // INHERITANCE                   |
+|    //  MULITIPLE INHERITANCE         |
+|======================================|
+ 
+// #include <iostream>
+// using namespace std;
+// class parent1 {
+//     public:
+//     void givememoney(){
+//         cout<<"mummy paise do muje"<<"\n";
+//     }
+// };
+// class parent2 {
+//     public:
+//     void givememoney(){
+//         cout<<"papa paise do muje"<<"\n";
+//     }
+// };
+// class child : public parent1,public parent2{
+//   // NO LOGIC
+// };
+// int main() {
+//     child obj;
+//     obj.parent1::givememoney();
+//     obj.parent2::givememoney();
+//     return 0;
+// }
+
+|==================================================|
+|     // DIAMOND PROBLEM                           |
+|     //  part of hybrid inheritance problem       |
+|     // solve by making  virtual base class       |
+|==================================================|
+
+|==================================|
+|     //     PROBLEM 5             |
+|     // HYBRID  INHERITANCE       |
+|==================================|     
+     #include<iostream>
+     using namespace std;
+     
+     class A{  // GRAND PARENTS CLASS
+         public :
+         void print(){
+             cout<<"BJP WONS";
+         }
+     };
+     class B : virtual public A{ // PARENT CLASS ab inhe VIRTUAL BNA DENGE
+         // NO LOGIC
+     };
+     class C : virtual public  A{ // PARENT CLASS  ab inhe VIRTUAL BNA DENGE  
+         // NO LOGIC 
+     };
+     class D :  public B,public C{ // CHILD CLASS
+         // NO LOGIC
+     };
+     int main(){
+         D obj1;
+         obj1.print();
+     }
+
+|================================================================================================|
+|        // PROBLEM = 6                                                                          |
+|       // POLYMORPHISM                                                                          |
+|       // POLYMORPHISM MEANS ONE NAME BUT MANY FORMS                                            |
+|       // SAME FUNCTION BEHAVES DIFFERNTLY DEPENDING ON THE TYPE OF  THE OBJECT  IT CALLED      |
+|       //TWO TYPES                                                                              |
+|================================================================================================|       
+      
+|==========================================================|
+|           // TYPES OF POLYMORPHISM ----2.1               |
+|           // FUNCTION OVERLOADING                        |
+|==========================================================|           
+        //   #include <iostream>
+        //   using namespace std;
+            
+        //     class A{
+        //         public:
+        //         void show(int a){
+        //             cout<<a<<endl;
+        //         }
+            
+        //     void show(int a,int b){
+        //         cout<<a*b<<endl;
+        //     }
+        //     void show(int a,int b,int c){
+        //         cout<<a*b*c<<endl;
+        //         }
+        //     };
+        //   int main(){
+        //       A obj;
+        //       obj.show(1);
+        //       obj.show(1,2);
+        //       obj.show(1,2,3);
+        //       return 0;
+        //   }
+
+|==================================================|
+|          // TYPES OF POLYMORPHISM ----2.2        |
+|          // FUNCTION OVERRDING                   |
+|==================================================|
+
+       #include <iostream>
+          using namespace std;
+        class animal{
+            public:
+            virtual void sound(){
+                cout<<"animal makes sound"<<endl;
+            }
+        };
+        class dog : public animal {
+            public:
+            void sound()  override {
+            cout<<"dog makes sound"<<endl;
+            }
+        };
+          class cat : public animal {
+              public:
+            void sound()  override {
+            cout<<"cat makes sound"<<endl;
+            }
+        };
+        int main(){
+            dog d;
+            cat c;;
+            d.sound();
+            c.sound();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
